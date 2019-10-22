@@ -1,3 +1,8 @@
+window.addEventListener("load", () => {
+  const vidCoffee = document.querySelector("[data-video=coffee]");
+  vidCoffee.play();
+});
+
 /*console.log(
   "%cHello fellow developer %cThe answear is... %cYes! %cYes Im open for hire!",
   "padding: 0 2px 0 2px; font-size: 18px; background-color: black; color: white; line-height: 25px",
