@@ -2,3 +2,4 @@
 video/
 dist/
 workfiles/
+node_modules/

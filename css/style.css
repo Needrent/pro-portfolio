@@ -324,10 +324,14 @@ article h4 {
 }
 /*------------------------------Media*/
 @media (min-width: 768px) {
+  a:hover {
+    font-family: var(--body-font-bold);
+    color: var(--color-primary);
+  }
   h1,
   h1 span {
     max-width: 103.3rem;
-    margin: 0 0 0 50%;
+    margin: 0 10% 0 0;
     color: white;
     font-size: 11.9rem;
     line-height: 11.9rem;
@@ -345,9 +349,25 @@ article h4 {
   #port1 {
     position: relative;
     overflow: hidden;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: black;
+    display: grid;
+    grid-template-columns: 55% repeat(2, 1fr);
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "image header header" "image coffee project";
+  }
+  #port1 h1 {
+    grid-area: header;
+  }
+  #port1 img {
+    grid-area: image;
+  }
+  #port1 a:nth-child(1) {
+    grid-area: coffee;
+  }
+  #port1 a:nth-child(2) {
+    grid-area: project;
   }
   #port1 video {
     position: absolute;
@@ -357,6 +377,23 @@ article h4 {
     opacity: 0.7;
   }
   /*-------------------------------navigation*/
+  #burgerMenu {
+    transform: translateX(0);
+    background: none;
+    justify-content: space-around;
+    flex-direction: row;
+    left: 25%;
+    margin-bottom: 1rem;
+    position: absolute;
+    top: 36%;
+    height: auto;
+  }
+  #subMenu {
+    text-align: initial;
+  }
+  label[for="burgerToggle"] {
+    display: none;
+  }
   header {
     position: fixed;
     top: 0;
@@ -403,6 +440,29 @@ article h4 {
   }
   #subMenu li {
     display: block;
+  }
+  #port2,
+  #port3 {
+    display: grid;
+    grid-template-columns: 33% 35% auto;
+
+    grid-template-areas: "subheader infoOne ctaOne" "subheader infoTwo ctaTwo";
+  }
+  h2 {
+    margin: 0 0 0 20rem;
+    grid-area: subheader;
+  }
+  section article:first-of-type {
+    grid-area: infoOne;
+  }
+  section article:last-of-type {
+    grid-area: infoTwo;
+  }
+  section div:first-of-type {
+    grid-area: ctaOne;
+  }
+  section div:last-of-type {
+    grid-area: ctaTwo;
   }
 
   /*-------------------------------Animation*/
