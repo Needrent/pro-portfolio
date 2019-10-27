@@ -1,34 +1,424 @@
+@import url("https://use.typekit.net/msc2mab.css");
+@font-face {
+  src: url("/font/fontawesome.otf");
+  font-family: fontawesome;
+}
+@font-face {
+  src: url("/font/cour.ttf");
+  font-family: "Courier New";
+}
+@font-face {
+  src: url("/font/courbd.ttf");
+  font-family: "Courier Bold";
+}
+@font-face {
+  src: url("/font/couri.ttf");
+  font-family: "Courier Italic";
+}
 * {
   margin: 0;
   padding: 0;
   font-size: 10px;
+  box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+}
+body {
+  background: var(--color-primary);
+}
+body,
+a,
+p {
+  color: var(--color-main);
+}
+body,
+a,
+p,
+button {
+  font-family: var(--body-font);
+  font-size: var(--font-size);
+}
+section {
+  min-height: 100vh;
+  padding-top: 15vh;
+}
+:root {
+  --header-font-fam: active, sans-serif;
+  --header-font-weight: 400;
+  --header-font-style: normal;
+
+  --font-size: 2.5rem;
+
+  --body-font: "Courier New";
+  --body-font-bold: "Courier Bold";
+  --body-font-italic: "Courier Italic";
+
+  --color-primary: #0d7484;
+  --color-secondary: #1299ae;
+
+  --color-main: white;
+  --color-gray: #c8c8c8;
+  --color-gray-hl: #707070;
+}
+a,
+a:visited {
+  --color-a: black;
+  text-decoration: none;
+  color: var(--color-a);
+}
+
 h1,
 h1 span {
-  width: 35%;
-  margin: 0 0 0 50%;
+  max-width: 100%;
   color: white;
-  font-size: 6rem;
+  font-size: 5rem;
+  line-height: 5rem;
   z-index: 1;
   position: relative;
-  font-family: sans-serif;
+  font-family: var(--header-font-fam);
+  font-weight: var(--header-font-weight);
+  font-style: var(--header-font-style);
+  margin: 12vh 1vh 0 1vh;
 }
 h1 span {
   display: block;
-  margin: 20% 0 0 0;
   width: 100%;
 }
 #port1 {
   position: relative;
   overflow: hidden;
   width: 100vw;
-  height: 100vh;
-  background: black;
+  min-height: 100vh;
+  padding: 0 0 3rem 0;
+  margin: 0;
+}
+#port1 img {
+  width: 80%;
+  z-index: 1;
+  position: relative;
+  margin: 2rem auto 0 auto;
+  display: block;
+}
+#port1 a.button {
+  position: relative;
+  z-index: 1;
 }
 #port1 video {
   position: absolute;
   min-width: 100%;
+  bottom: 0;
+  left: -15rem;
+  opacity: 0.7;
+}
+/*-------------------------------button*/
+a.button {
+  display: block;
+  font-family: var(--body-font-bold);
+  color: var(--color-main);
+  text-align: center;
+  background: var(--color-secondary);
+  padding: 1rem;
+  margin: 1rem auto 0 auto;
+  border-radius: 1rem;
+  width: 95%;
+}
+/*-------------------------------navigation*/
+/*-------------------------------burgerMenu*/
+#burgerToggle {
+  display: none;
+}
+#burgerToggle:checked ~ #burgerMenu {
+  transform: translateX(0);
+}
+label[for="burgerToggle"] {
+  --burger-size: 4rem;
+  width: var(--burger-size);
+  height: var(--burger-size);
+  order: 2;
+  margin: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+label[for="burgerToggle"] span {
+  width: var(--burger-size);
+  height: 0.8rem;
+  background: black;
+  display: block;
+  border-radius: 1rem;
+  margin: 0 0 0.5rem 0;
+  position: absolute;
+}
+label[for="burgerToggle"] span:nth-child(1) {
   top: 0;
   left: 0;
-  opacity: 0.7;
+}
+label[for="burgerToggle"] span:nth-child(2) {
+  top: calc(50% - (0.7rem / 2));
+  left: 0;
+}
+label[for="burgerToggle"] span:nth-child(3) {
+  top: calc(100% - 0.7rem);
+  left: 0;
+}
+#burgerToggle:checked + label[for="burgerToggle"]span:nth-child(2) {
+  opacity: 0;
+}
+nav a {
+  order: 1;
+}
+#burgerMenu {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  background: var(--color-main);
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  height: 90vh;
+  text-align: center;
+  transform: translateX(100%);
+  transition: 0.2s ease;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  background: var(--color-main);
+}
+nav ul {
+  display: block;
+  list-style: none;
+  order: 1;
+}
+nav ul.social {
+  order: 2;
+}
+nav ul.social li {
+  display: inline-block;
+}
+ul.social li a {
+  font-family: fontawesome;
+  font-size: 2.5rem;
+  color: var(--color-gray);
+}
+ul.social li a:hover {
+  color: var(--color-gray-hl);
+}
+#menu:nth-child(2) {
+  position: relative;
+}
+#subMenu li {
+  display: none;
+}
+#subMenu li:nth-child(1),
+#subMenu li:nth-child(4) {
+  display: block;
+}
+
+/*--------------------------------content*/
+section#port2,
+section#port3 {
+  padding: 10rem 1rem 1rem 1rem;
+}
+section#port2 img,
+section#port3 img {
+  width: 100%;
+}
+h2 {
+  position: relative;
+}
+h2,
+h2 span {
+  font-family: var(--header-font-fam);
+  font-weight: var(--header-font-weight);
+  font-style: var(--header-font-style);
+  font-size: 11rem;
+  line-height: 11rem;
+}
+article h3 {
+  font-size: 3rem;
+  margin: 3rem 0 0 0;
+}
+article p:first-of-type {
+  font-family: var(--body-font-bold);
+}
+article p {
+  margin: 0 0 1rem 0;
+}
+article h3,
+article h4 {
+  font-family: var(--body-font-bold);
+}
+article h4 {
+  font-size: var(--font-size);
+}
+/*-------------------------------Port 2 Animation*/
+#port2 h2 span:nth-child(1) {
+  font-size: 29rem;
+  padding: 5rem 0 0 0;
+  display: block;
+}
+#port2 h2 span:nth-child(2) {
+  position: relative;
+  z-index: 1;
+}
+#port2 h2 span:nth-child(3) {
+  position: relative;
+  display: inline-block;
+  font-size: 30rem;
+  margin: 11rem 0 0 0;
+  z-index: 1;
+}
+/*-------------------------------Animation*/
+#stuffed {
+  height: 484px;
+  width: 386px;
+  animation: stuffed 1s steps(30) infinite;
+  background: url("/images/stuffed-sprite.png") no-repeat;
+  position: absolute;
+  top: 8.5rem;
+  left: -21.4rem;
+}
+/*-------------------------------Port 3 Coding*/
+#port3 {
+  margin-bottom: 3rem;
+}
+#port3 h2 {
+  font-size: 9.5rem;
+  display: block;
+}
+#port3 h2 span:nth-child(1) {
+  font-size: 29rem;
+  padding: 5rem 0 0 0;
+  display: block;
+}
+#port3 h2 span:nth-child(2) {
+  display: block;
+  padding: 1rem 0 0 0;
+}
+#port3 h2 span:nth-child(3) {
+  display: block;
+  font-size: 10rem;
+  margin: -3rem 0 0 9rem;
+}
+#port3 h2 span:nth-child(4) {
+  display: block;
+  font-size: 15rem;
+  margin: -3rem 0 0 0;
+}
+@keyframes stuffed {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -11580px;
+  }
+}
+/*------------------------------Media*/
+@media (min-width: 768px) {
+  h1,
+  h1 span {
+    max-width: 103.3rem;
+    margin: 0 0 0 50%;
+    color: white;
+    font-size: 11.9rem;
+    line-height: 11.9rem;
+    z-index: 1;
+    position: relative;
+    font-family: var(--header-font-fam);
+    font-weight: var(--header-font-weight);
+    font-style: var(--header-font-style);
+  }
+  h1 span {
+    display: block;
+    margin: 20% 0 0 0;
+    width: 100%;
+  }
+  #port1 {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+  }
+  #port1 video {
+    position: absolute;
+    min-width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+  }
+  /*-------------------------------navigation*/
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    background: var(--color-main);
+  }
+  nav > * {
+    align-self: center;
+  }
+  nav ul > * {
+    display: inline-block;
+  }
+  ul.social li a {
+    font-family: fontawesome;
+    font-size: 2.5rem;
+    color: var(--color-gray);
+  }
+  ul.social li a:hover {
+    color: var(--color-gray-hl);
+  }
+  #menu:nth-child(2) {
+    position: relative;
+  }
+  #menu li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #subMenu {
+    position: absolute;
+    background: var(--color-main);
+    visibility: hidden;
+    transition: 0.2s;
+    opacity: 0;
+    transform: translateY(-100%);
+    padding: 0.2rem;
+    width: max-content;
+  }
+  #subMenu li {
+    display: block;
+  }
+
+  /*-------------------------------Animation*/
+  #stuffed {
+    height: 484px;
+    width: 386px;
+    animation: stuffed 1s steps(30) infinite;
+    background: url("/images/stuffed-sprite.png") no-repeat;
+    position: absolute;
+  }
+  @keyframes stuffed {
+    from {
+      background-position-x: 0;
+    }
+    to {
+      background-position-x: -11580px;
+    }
+  }
 }

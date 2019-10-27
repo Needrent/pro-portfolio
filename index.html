@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-138871332-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-138871332-1");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -9,14 +23,201 @@
   </head>
   <body>
     <main>
+      <header>
+        <nav>
+          <input type="checkbox" id="burgerToggle" />
+          <label for="burgerToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <div id="burgerMenu">
+            <ul class="social">
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.youtube.com/channel/UCIRMGklrTOFab4_hNp4HJDQ"
+                  >Youtube</a
+                >
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/simonerasmusjohansen/"
+                  >Linkedin</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://www.instagram.com/needrent.dk"
+                  >instagram</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://codepen.io/needrent"
+                  >codepen</a
+                >
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://github.com/Needrent?tab=repositories"
+                  >github</a
+                >
+              </li>
+            </ul>
+            <ul id="menu">
+              <li><a href="#">Home</a></li>
+              <li>
+                <a href="#port2">Projects</a>
+                <ul id="subMenu">
+                  <li class="subHeader"><a href="#">Animation</a></li>
+                  <li><a href="#">CSS</a></li>
+                  <li><a href="#">AE</a></li>
+                  <li class="subHeader"><a href="#">Coding</a></li>
+                  <li><a href="#">Microsite</a></li>
+                  <li><a href="#">Xd to active site</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="mailto:sej@needrent.dk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a href="#"><img src="/images/logo.png" alt="NeedRent logo"/></a>
+        </nav>
+      </header>
       <section id="port1">
         <h1>
           <span>Hi I'm Simon!</span> A Multimedia Designer with a love of motion
-          and learning
+          and dynamic pages
         </h1>
+        <img
+          src="/images/Profile-Picture_1200x1200_72ppi.jpg"
+          alt="Picture of Simon Erasmus Johansen"
+        />
+        <a href="mailto:sej@needrent.dk" class="button"
+          >Let's talk over coffee?</a
+        >
+        <a href="#port2" class="button">Projects</a>
         <video data-video="coffee" loop muted>
           <source src="video/coffee.mp4" type="video/mp4" />
         </video>
+      </section>
+      <section id="port2">
+        <h2>
+          Animation
+          <span>CSS </span>
+          <span>or </span>
+          <span>AE</span>
+          <span Id="stuffed"></span>
+        </h2>
+        <article>
+          <h3>Titanic, an Animated Story</h3>
+          <p>Role: Lead programmer</p>
+          <p>
+            We had to created an animated story using a given style and then
+            choose the scene we wanted to make.
+          </p>
+          <h4>The Style, the scene and the ambitions!</h4>
+          <p>
+            We was given the style collage, and choose the final scene from the
+            movie Titanic, we chose that since it's was a movie we all knew.
+          </p>
+          <h4>What did I learn?</h4>
+          <p>
+            We had some big ambitions for the project and in the end had to cut
+            away a lot of "nice to haves" otherwise we would have no project to
+            show.
+          </p>
+        </article>
+        <div>
+          <img src="images/project.jpg" alt="Titanic" />
+          <a
+            href="http://kea.needrent.dk/titanic/index.html"
+            target="_blank"
+            class="button"
+            >See the project (PC)</a
+          >
+        </div>
+        <article>
+          <h3>Simon the Salmon</h3>
+          <p>Role: Lead animator</p>
+          <p>
+            In a group of six, we made a campain site for ANIMA with focus on
+            Salmon farming. For that we made a campaign video where I was the
+            lead animator
+          </p>
+          <p>
+            And no, it was not me that came up with the name for the Salmon.
+          </p>
+        </article>
+        <div>
+          <img src="images/project.jpg" alt="Titanic" />
+          <a href="https://youtu.be/4FgAAKiMv00" target="_blank" class="button"
+            >Watch the video (2:00)</a
+          >
+        </div>
+      </section>
+      <section id="port3">
+        <h2>
+          Coding from
+          <span>Xd </span>
+          <span>prototypes </span>
+          <span>to final</span>
+          <span>Site</span>
+        </h2>
+        <article>
+          <h3>Bike Your Way</h3>
+          <p>Role: Coding, editing</p>
+          <h4>The Project</h4>
+          <p>
+            We decided if we wanted to code or design, and put our name on a
+            piece of paper and then the teachers had one designer pull names
+            from the "hats" so each group had 3 designer and 3 coders
+          </p>
+
+          <p>
+            I was one of the coders and we where given the task of creating a
+            microsite that focused on biking in Denmark
+          </p>
+
+          <p>We then created the fictional company "Bike Your Way".</p>
+        </article>
+        <div>
+          <img src="images/project.jpg" alt="Titanic" />
+          <a
+            href="http://kea.needrent.dk/subpage/basic-content-microsite.html"
+            target="_blank"
+            class="button"
+            >Read more</a
+          >
+        </div>
+        <article>
+          <h3>HUSET (REST API)</h3>
+          <p>Role: Lead coder</p>
+          <p>
+            In a group of six, we made a campain site for ANIMA with focus on
+            Salmon farming. For that we made a campaign video where I was the
+            lead animator
+          </p>
+          <p>
+            And no, it was not me that came up with the name for the Salmon.
+          </p>
+        </article>
+        <div>
+          <img src="images/project.jpg" alt="Titanic" />
+          <a
+            href="http://kea.needrent.dk/huset-kbh/"
+            target="_blank"
+            class="button"
+            >Try the site</a
+          >
+        </div>
       </section>
     </main>
     <script src="javascript/index.js"></script>
